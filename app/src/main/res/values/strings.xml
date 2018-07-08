@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Quizz</string>
+    <string name="rb_option1_string">NULL</string>
+    <string name="rb_option2_string">0</string>
+    <string name="rb_option3_string">Depends upon the type of variable</string>
+    <string name="rb_option4_string">Not assigned</string>
+    <string name="checkbox_1">Single</string>
+    <string name="checkbox_2">Multi Level</string>
+    <string name="checkbox_3">Hierarchical</string>
+    <string name="checkbox_4">Multiple</string>
+    <string name="content_description">Quizz Image</string>
+    <string name="str_bt_reset">Reset</string>
+    <string name="str_btn_submit">Submit</string>
+    <string name="edit_text_hint">Enter text here</string>
+    <string name="question_1_str">Q1:What of the following is the default value of a local variable?</string>
+    <string name="question_2_str">Q2:Type of inheritance in java</string>
+    <string name="question_3_str">Q3:Method Overloading is an example of</string>
+    <string name="question_4_str">Q4:What is the size of short variable?</string>
+    <string name="question_5_str">Q5:What is the default value of long variable?</string>
+    <string name="rb_option1_ques4_string">8 bit</string>
+    <string name="rb_option2_ques4_string">16 bit</string>
+    <string name="rb_option3_ques4_string">32 bit</string>
+    <string name="rb_option4_ques4_string">64 bit</string>
+    <string name="rb_option1_ques5_string">0</string>
+    <string name="rb_option2_ques5_string">0.0</string>
+    <string name="rb_option3_ques5_string">0L</string>
+    <string name="rb_option4_ques5_string">not defined</string>
+    <string name="tools_text_str">Question goes here</string>
+</resources>
