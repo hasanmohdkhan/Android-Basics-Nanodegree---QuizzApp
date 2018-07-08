@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    android:layout_height="match_parent"
-    android:layout_width="match_parent"
-    android:fillViewport="true"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.example.hasanzian.quizz.MainActivity">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -13,7 +12,7 @@
         <TextView
             android:id="@+id/question_1"
             style="@style/TextViewStyle"
-            tools:text="@string/tools_text_str"/>
+            tools:text="@string/tools_text_str" />
 
         <RadioGroup
             android:id="@+id/radio_group_ques_1"
@@ -89,7 +88,7 @@
             android:layout_below="@id/question_3"
             android:layout_margin="@dimen/editbox_margin_10dp"
             android:hint="@string/edit_text_hint"
-            android:textColorHint="@color/primary_light"/>
+            android:textColorHint="@color/primary_light" />
 
         <TextView
             android:id="@+id/question_4"
@@ -137,10 +136,9 @@
 
         <TextView
             android:id="@+id/question_5"
-            android:layout_below="@id/radio_group_ques_4"
             style="@style/TextViewStyle"
-            tools:text="Question Goes Here"
-            />
+            android:layout_below="@id/radio_group_ques_4"
+            tools:text="Question Goes Here" />
 
         <RadioGroup
             android:id="@+id/radio_group_ques_5"
@@ -171,7 +169,6 @@
                 android:onClick="questionFive"
                 android:text="@string/rb_option4_ques5_string" />
         </RadioGroup>
-
 
 
         <LinearLayout

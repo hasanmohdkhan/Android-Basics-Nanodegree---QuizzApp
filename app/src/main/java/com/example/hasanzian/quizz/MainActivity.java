@@ -14,10 +14,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-  private RadioGroup mRadioGroup_que_1,mRadioGroup_que_4,mRadioGroup_que_5;
-  private int mark = 0;
-  private CheckBox mCheckBox1, mCheckBox2, mCheckBox3, mCheckBox4;
-  private EditText mEditTextResponse;
+    private RadioGroup mRadioGroup_que_1, mRadioGroup_que_4, mRadioGroup_que_5;
+    private int mark = 0;
+    private CheckBox mCheckBox1, mCheckBox2, mCheckBox3, mCheckBox4;
+    private EditText mEditTextResponse;
 
 
     @Override
@@ -47,62 +47,66 @@ public class MainActivity extends AppCompatActivity {
         mQue_5.setText(getString(R.string.question_5_str));
 
         mEditTextResponse.addTextChangedListener(new TextWatcher() {
-    @Override
-    public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
-    @Override
-    public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {}
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
-    @Override
-    public void afterTextChanged(Editable editable) {
-        String string = mEditTextResponse.getText().toString().toLowerCase();
-        if(string.equals(getString(R.string.static_binding_str))){
-            mark=mark+1;
-        }}});
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String string = mEditTextResponse.getText().toString().toLowerCase();
+                if (string.equals(getString(R.string.static_binding_str))) {
+                    mark = mark + 1;
+                }
+            }
+        });
     }
 
     public void isClickedRadio(View view) {
-        boolean checked = ((RadioButton)view).isChecked();
-        switch (view.getId()){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
             case R.id.option_1:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_1,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_1, Toast.LENGTH_SHORT).show();
                 }
-               break;
+                break;
             case R.id.option_2:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_2,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_2, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.option_3:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_3,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_3, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.option_4:
-                if(checked){
-                     mark=mark+1;
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_4,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    mark = mark + 1;
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_4, Toast.LENGTH_SHORT).show();
                 }
                 break;
 
-               default:
-                   Toast.makeText(getApplicationContext(),"Default ",Toast.LENGTH_SHORT).show();
+            default:
+                Toast.makeText(getApplicationContext(), "Default ", Toast.LENGTH_SHORT).show();
 
         }
 
     }
 
     public void onCheckboxClicked(View view) {
-        if(mCheckBox1.isChecked() && mCheckBox2.isChecked() && mCheckBox3.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.checkbox_str_toast,Toast.LENGTH_SHORT).show();
-            mark=mark+1;
+        if (mCheckBox1.isChecked() && mCheckBox2.isChecked() && mCheckBox3.isChecked()) {
+            Toast.makeText(getApplicationContext(), R.string.checkbox_str_toast, Toast.LENGTH_SHORT).show();
+            mark = mark + 1;
         }
 
     }
 
     public void processResult(View view) {
-        Toast.makeText(getApplicationContext(),getString(R.string.Result_str_toast_pt1)+mark +getString(R.string.Result_str_toast_pt2),Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.Result_str_toast_pt1) + mark + getString(R.string.Result_str_toast_pt2), Toast.LENGTH_LONG).show();
     }
 
     public void resetQuestion(View view) {
@@ -127,70 +131,69 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mark =savedInstanceState.getInt(getString(R.string.response_key),mark);
+        mark = savedInstanceState.getInt(getString(R.string.response_key), mark);
 
 
     }
 
     public void questionFive(View view) {
-        boolean checked = ((RadioButton)view).isChecked();
+        boolean checked = ((RadioButton) view).isChecked();
 
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.que_5_option_1:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_1,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_1, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_2:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_2,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_2, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_3:
-                if(checked){
-                    mark=mark+1;
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_3,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    mark = mark + 1;
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_3, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_4:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_4,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_4, Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
-                Toast.makeText(getApplicationContext(), R.string.default_str_toast,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.default_str_toast, Toast.LENGTH_SHORT).show();
         }
     }
 
     public void questionFour(View view) {
-        boolean checked = ((RadioButton)view).isChecked();
-        switch (view.getId()){
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
             case R.id.que_4_option_1:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_1,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_1, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_2:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_2,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_2, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_3:
-                if(checked){
-                    mark=mark+1;
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_3,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    mark = mark + 1;
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_3, Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_4:
-                if(checked){
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_4,Toast.LENGTH_SHORT).show();
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_4, Toast.LENGTH_SHORT).show();
                 }
                 break;
             default:
-                Toast.makeText(getApplicationContext(),R.string.default_str_toast,Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), R.string.default_str_toast, Toast.LENGTH_SHORT).show();
 
         }
-
 
 
     }
