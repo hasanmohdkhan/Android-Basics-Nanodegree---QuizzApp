@@ -5,7 +5,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -14,11 +13,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private RadioGroup mRadioGroup_que_1, mRadioGroup_que_4, mRadioGroup_que_5;
+    private RadioGroup mRadioGroup_que_1, mRadioGroup_que_2, mRadioGroup_que_4, mRadioGroup_que_5;
     private int mark = 0;
-    private CheckBox mCheckBox1, mCheckBox2, mCheckBox3, mCheckBox4;
     private EditText mEditTextResponse;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +27,9 @@ public class MainActivity extends AppCompatActivity {
         TextView mQue_4 = findViewById(R.id.question_4);
         TextView mQue_5 = findViewById(R.id.question_5);
         mRadioGroup_que_1 = findViewById(R.id.radio_group_ques_1);
+        mRadioGroup_que_2 = findViewById(R.id.radio_group_ques_2);
         mRadioGroup_que_4 = findViewById(R.id.radio_group_ques_4);
         mRadioGroup_que_5 = findViewById(R.id.radio_group_ques_5);
-
-        mCheckBox1 = findViewById(R.id.checkbox_1);
-        mCheckBox2 = findViewById(R.id.checkbox_2);
-        mCheckBox3 = findViewById(R.id.checkbox_3);
-        mCheckBox4 = findViewById(R.id.checkbox_4);
 
         mEditTextResponse = findViewById(R.id.edit_text_view);
 
@@ -97,26 +90,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void onCheckboxClicked(View view) {
-        if (mCheckBox1.isChecked() && mCheckBox2.isChecked() && mCheckBox3.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.checkbox_str_toast, Toast.LENGTH_SHORT).show();
-            mark = mark + 1;
-        }
-
-    }
-
     public void processResult(View view) {
-        Toast.makeText(getApplicationContext(), getString(R.string.Result_str_toast_pt1) + mark + getString(R.string.Result_str_toast_pt2), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), getString(R.string.Result_str_toast_pt1) + mark, Toast.LENGTH_LONG).show();
     }
 
     public void resetQuestion(View view) {
         mRadioGroup_que_1.clearCheck();
         mRadioGroup_que_4.clearCheck();
         mRadioGroup_que_5.clearCheck();
-        mCheckBox1.setChecked(false);
-        mCheckBox2.setChecked(false);
-        mCheckBox3.setChecked(false);
-        mCheckBox4.setChecked(false);
+        mRadioGroup_que_2.clearCheck();
         mEditTextResponse.setText("");
         mark = 0;
     }
@@ -132,7 +114,36 @@ public class MainActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         mark = savedInstanceState.getInt(getString(R.string.response_key), mark);
+    }
 
+    public void questionTwo(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch (view.getId()) {
+            case R.id.que_2_option_1:
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_2_option_1_str, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.que_2_option_2:
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_2_option_2_str, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.que_2_option_3:
+                if (checked) {
+                    Toast.makeText(getApplicationContext(), R.string.que_2_option_3_str, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case R.id.que_2_option_4:
+                if (checked) {
+                    mark = mark + 1;
+                    Toast.makeText(getApplicationContext(), R.string.que_2_option_4_str, Toast.LENGTH_SHORT).show();
+                }
+                break;
+            default:
+                Toast.makeText(getApplicationContext(), R.string.default_str_toast, Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 

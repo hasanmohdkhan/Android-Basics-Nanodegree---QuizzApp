@@ -50,35 +50,39 @@
             android:layout_below="@+id/radio_group_ques_1"
             tools:text="Question Goes Here" />
 
-        <CheckBox
-            android:id="@+id/checkbox_1"
-            style="@style/CommonWidHeight"
-            android:layout_below="@id/question_2"
-            android:onClick="onCheckboxClicked"
-            android:text="@string/checkbox_1" />
+        <RadioGroup
+            android:id="@+id/radio_group_ques_2"
+            style="@style/RadioGroupStyle"
+            android:layout_below="@+id/question_2">
 
-        <CheckBox
-            android:id="@+id/checkbox_2"
-            style="@style/CommonWidHeight"
-            android:layout_below="@id/checkbox_1"
-            android:text="@string/checkbox_2" />
+            <RadioButton
+                android:id="@+id/que_2_option_1"
+                style="@style/CommonWidHeight"
+                android:onClick="questionTwo"
+                android:text="@string/que_2_option_1_str" />
 
-        <CheckBox
-            android:id="@+id/checkbox_3"
-            style="@style/CommonWidHeight"
-            android:layout_below="@id/checkbox_2"
-            android:text="@string/checkbox_3" />
+            <RadioButton
+                android:id="@+id/que_2_option_2"
+                style="@style/CommonWidHeight"
+                android:onClick="questionTwo"
+                android:text="@string/que_2_option_2_str" />
 
-        <CheckBox
-            android:id="@+id/checkbox_4"
-            style="@style/CommonWidHeight"
-            android:layout_below="@id/checkbox_3"
-            android:text="@string/checkbox_4" />
+            <RadioButton
+                android:id="@+id/que_2_option_3"
+                style="@style/CommonWidHeight"
+                android:onClick="questionTwo"
+                android:text="@string/que_2_option_3_str" />
 
+            <RadioButton
+                android:id="@+id/que_2_option_4"
+                style="@style/CommonWidHeight"
+                android:onClick="questionTwo"
+                android:text="@string/que_2_option_4_str" />
+        </RadioGroup>
         <TextView
             android:id="@+id/question_3"
             style="@style/TextViewStyle"
-            android:layout_below="@+id/checkbox_4"
+            android:layout_below="@+id/radio_group_ques_2"
             tools:text="Question Goes Here" />
 
 
