@@ -5,12 +5,12 @@ This application contain Java questions
 UI 
 ===================================
 <div align="center">
-    <img src="https://github.com/hasanmohdkhan/Udacity-basic-Court-Counter-App/blob/master/device-2018-04-11-160658.png" width="600px"</img> 
+    <img src="https://github.com/hasanmohdkhan/Android-Basics-Nanodegree---QuizzApp/blob/master/device-2018-07-08-175828.png" width="600px"</img> 
 </div>
 <br>
 
 <div align="center">
-    <img src="https://github.com/hasanmohdkhan/Udacity-basic-Court-Counter-App/blob/master/device-2018-04-11-165732.png" width="800px"</img> 
+    <img src="https://github.com/hasanmohdkhan/Android-Basics-Nanodegree---QuizzApp/blob/master/device-2018-07-08-175931.png" width="800px"</img> 
 </div>
 <br>
 
