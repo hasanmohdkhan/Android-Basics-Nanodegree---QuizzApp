@@ -14,7 +14,7 @@
     <string name="edit_text_hint">Enter text here</string>
     <string name="question_1_str">Q1:What of the following is the default value of a local variable?</string>
     <string name="question_2_str">Q2:Type of inheritance in java</string>
-    <string name="question_3_str">Q3:Method Overloading is an example of</string>
+    <string name="question_3_str">Q3:Method Overloading is an example of - Static binding OR dynamic binding</string>
     <string name="question_4_str">Q4:What is the size of short variable?</string>
     <string name="question_5_str">Q5:What is the default value of long variable?</string>
     <string name="rb_option1_ques4_string">8 bit</string>
@@ -26,4 +26,22 @@
     <string name="rb_option3_ques5_string">0L</string>
     <string name="rb_option4_ques5_string">not defined</string>
     <string name="tools_text_str">Question goes here</string>
+    <string name="static_binding_str">static binding</string>
+    <string name="toast_str_option_1">option 1</string>
+    <string name="toast_str_option_2">option 2</string>
+    <string name="toast_str_option_3">option 3</string>
+    <string name="toast_str_option_4">option 4</string>
+    <string name="checkbox_str_toast">option 1 ,2 and 3 selected</string>
+    <string name="Result_str_toast_pt1">Result:   You got</string>
+    <string name="Result_str_toast_pt2">Marks</string>
+    <string name="response_key">response</string>
+    <string name="que_5_opt_1">Selected: 0</string>
+    <string name="default_str_toast">Default</string>
+    <string name="que_5_opt_4">Selected : Not defined</string>
+    <string name="que_5_opt_3">Selected : 0L</string>
+    <string name="que_5_opt_2">Selected : 0.0</string>
+    <string name="que_4_opt_1">Selected: 8bit</string>
+    <string name="que_4_opt_2">Selected: 16bit</string>
+    <string name="que_4_opt_3">Selected: 32bit</string>
+    <string name="que_4_opt_4">Selected: 64bit</string>
 </resources>

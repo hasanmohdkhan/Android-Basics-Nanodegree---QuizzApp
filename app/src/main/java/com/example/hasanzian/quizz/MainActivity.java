@@ -56,34 +56,33 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void afterTextChanged(Editable editable) {
         String string = mEditTextResponse.getText().toString().toLowerCase();
-        if(string.equals("static binding")){
+        if(string.equals(getString(R.string.static_binding_str))){
             mark=mark+1;
         }}});
     }
 
     public void isClickedRadio(View view) {
         boolean checked = ((RadioButton)view).isChecked();
-
         switch (view.getId()){
             case R.id.option_1:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"option1 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_1,Toast.LENGTH_SHORT).show();
                 }
                break;
             case R.id.option_2:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"option 2 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_2,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.option_3:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"option 3",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_3,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.option_4:
                 if(checked){
                      mark=mark+1;
-                    Toast.makeText(getApplicationContext(),"option 4 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_4,Toast.LENGTH_SHORT).show();
                 }
                 break;
 
@@ -95,16 +94,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onCheckboxClicked(View view) {
-
         if(mCheckBox1.isChecked() && mCheckBox2.isChecked() && mCheckBox3.isChecked()) {
-            Toast.makeText(getApplicationContext(),"1 && 2 && 3",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), R.string.checkbox_str_toast,Toast.LENGTH_SHORT).show();
             mark=mark+1;
         }
 
     }
 
     public void processResult(View view) {
-        Toast.makeText(getApplicationContext(),"Marks :"+mark,Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(),getString(R.string.Result_str_toast_pt1)+mark +getString(R.string.Result_str_toast_pt2),Toast.LENGTH_LONG).show();
     }
 
     public void resetQuestion(View view) {
@@ -123,15 +121,13 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
-        outState.putInt("response", mark);
-
-
+        outState.putInt(getString(R.string.response_key), mark);
     }
 
     @Override
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
-        mark =savedInstanceState.getInt("response",mark);
+        mark =savedInstanceState.getInt(getString(R.string.response_key),mark);
 
 
     }
@@ -142,62 +138,56 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId()){
             case R.id.que_5_option_1:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFive: option1  ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_1,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_2:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFive: option 2 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_2,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_3:
                 if(checked){
                     mark=mark+1;
-                    Toast.makeText(getApplicationContext(),"questionFive: option 3",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_3,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_5_option_4:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFive: option 4 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_4,Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             default:
-                Toast.makeText(getApplicationContext(),"questionFive: Default ",Toast.LENGTH_SHORT).show();
-
+                Toast.makeText(getApplicationContext(), R.string.default_str_toast,Toast.LENGTH_SHORT).show();
         }
-
-
     }
 
     public void questionFour(View view) {
         boolean checked = ((RadioButton)view).isChecked();
-
         switch (view.getId()){
             case R.id.que_4_option_1:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFour: option1  ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_1,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_2:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFour: option 2 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_2,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_3:
                 if(checked){
                     mark=mark+1;
-                    Toast.makeText(getApplicationContext(),"questionFour: option 3",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_3,Toast.LENGTH_SHORT).show();
                 }
                 break;
             case R.id.que_4_option_4:
                 if(checked){
-                    Toast.makeText(getApplicationContext(),"questionFour: option 4 ",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_4,Toast.LENGTH_SHORT).show();
                 }
                 break;
-
             default:
-                Toast.makeText(getApplicationContext(),"questionFour: Default ",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(),R.string.default_str_toast,Toast.LENGTH_SHORT).show();
 
         }
 

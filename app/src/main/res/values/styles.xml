@@ -13,6 +13,8 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:padding">@dimen/textview_padding</item>
         <item name="android:textSize">@dimen/textview_font_size</item>
+        <item name="android:textColor">@color/primary_text</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
 <style name="RadioGroupStyle">
