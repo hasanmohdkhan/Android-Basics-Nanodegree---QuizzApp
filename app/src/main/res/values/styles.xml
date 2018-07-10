@@ -11,8 +11,8 @@
     <style name="TextViewStyle">
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_width">match_parent</item>
-        <item name="android:padding">@dimen/textview_padding</item>
-        <item name="android:textSize">@dimen/textview_font_size</item>
+        <item name="android:padding">@dimen/text_view_padding</item>
+        <item name="android:textSize">@dimen/text_view_font_size</item>
         <item name="android:textColor">@color/primary_text</item>
         <item name="android:textStyle">bold</item>
     </style>
@@ -27,16 +27,15 @@
     <style name="CommonWidHeight">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_marginLeft">@dimen/editbox_margin_10dp</item>
+        <item name="android:layout_marginLeft">@dimen/edit_box_margin_10dp</item>
     </style>
 
 
     <style name="ImageViewStyle">
-        <item name="android:layout_width">@dimen/imageview_width</item>
-        <item name="android:layout_height">@dimen/imageview_height</item>
+        <item name="android:layout_width">@dimen/image_view_width</item>
+        <item name="android:layout_height">@dimen/image_view_height</item>
         <item name="android:layout_centerHorizontal">true</item>
-        <item name="android:layout_marginBottom">@dimen/imageview_margin_bottom</item>
-
+        <item name="android:layout_marginBottom">@dimen/image_view_margin_bottom</item>
     </style>
 
 </resources>

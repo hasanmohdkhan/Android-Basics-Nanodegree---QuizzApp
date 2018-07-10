@@ -13,7 +13,7 @@
     <string name="str_btn_submit">Submit</string>
     <string name="edit_text_hint">Enter text here</string>
     <string name="question_1_str">Q1:What of the following is the default value of a local variable?</string>
-    <string name="question_2_str">Q2:Type of inheritance not present in java</string>
+    <string name="question_2_str">Q2:Type of inheritance present in java</string>
     <string name="question_3_str">Q3:Method Overloading is an example of - Static binding OR dynamic binding</string>
     <string name="question_4_str">Q4:What is the size of short variable?</string>
     <string name="question_5_str">Q5:What is the default value of long variable?</string>
