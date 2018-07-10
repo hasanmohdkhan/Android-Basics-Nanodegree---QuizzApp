@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
@@ -15,15 +16,23 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     //Declared variables for Activity
+    private RadioButton q1_4, q4_3, q5_3;
     private RadioGroup mRadioGroup_que_1, mRadioGroup_que_4, mRadioGroup_que_5;
     private CheckBox mCheckBox_1, mCheckBox_2, mCheckBox_3, mCheckBox_4;
-    private int mark = 0;
+    private int mark, q3_mark;
     private EditText mEditTextResponse;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //hiding keyboard on application start
+        this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         setContentView(R.layout.activity_main);
+        //Radio button for Questions (Q1,Q4,Q5)
+        q1_4 = findViewById(R.id.que_1_option_4);
+        q4_3 = findViewById(R.id.que_4_option_3);
+        q5_3 = findViewById(R.id.que_5_option_3);
+
         //Text View for Questions (Q1.. to Q5)
         TextView mQue_1 = findViewById(R.id.question_1);
         TextView mQue_2 = findViewById(R.id.question_2);
@@ -64,19 +73,54 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                String string = mEditTextResponse.getText().toString().toLowerCase();
+                String string = mEditTextResponse.getText().toString().trim().toLowerCase();
                 if (string.equals(getString(R.string.static_binding_str))) {
-                    mark = mark + 1;
+                    q3_mark = 1;
+                } else {
+                    q3_mark = 0;
                 }
             }
         });
     }
 
 
+    //processResult is use to process response Enter by user
     public void processResult(View view) {
-        Toast.makeText(getApplicationContext(), getString(R.string.Result_str_toast_pt1) + mark, Toast.LENGTH_LONG).show();
+        boolean b_q1_4 = q1_4.isChecked();
+        int q1_mark;
+        if (b_q1_4) {
+            q1_mark = 1;
+        } else {
+            q1_mark = 0;
+        }
+        boolean b_q4_3 = q4_3.isChecked();
+        int q4_mark;
+        if (b_q4_3) {
+            q4_mark = 1;
+        } else {
+            q4_mark = 0;
+        }
+        boolean b_q5_3 = q5_3.isChecked();
+        int q5_mark;
+        if (b_q5_3) {
+            q5_mark = 1;
+        } else {
+            q5_mark = 0;
+        }
+
+        int q2_mark;
+        if (mCheckBox_1.isChecked() && mCheckBox_2.isChecked() && mCheckBox_3.isChecked() && !mCheckBox_4.isChecked()) {
+            q2_mark = 1;
+        } else {
+            q2_mark = 0;
+        }
+        mark = q1_mark + q4_mark + q5_mark + q2_mark + q3_mark;
+
+        Toast.makeText(getApplicationContext(), getString(R.string.Result_str_toast_pt1) + mark, Toast.LENGTH_SHORT).show();
     }
 
+
+    //Reset button method
     public void resetQuestion(View view) {
         mRadioGroup_que_1.clearCheck();
         mRadioGroup_que_4.clearCheck();
@@ -101,119 +145,12 @@ public class MainActivity extends AppCompatActivity {
         super.onRestoreInstanceState(savedInstanceState);
         mark = savedInstanceState.getInt(getString(R.string.response_key), mark);
     }
-
-    public void questionOne(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.option_1:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_1, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.option_2:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_2, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.option_3:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_3, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.option_4:
-                if (checked) {
-                    mark = mark + 1;
-                    Toast.makeText(getApplicationContext(), R.string.toast_str_option_4, Toast.LENGTH_SHORT).show();
-                }
-                break;
-
-            default:
-                Toast.makeText(getApplicationContext(), "Default ", Toast.LENGTH_SHORT).show();
-
-        }
-
-    }
-
-    public void questionTwo(View view) {
-        if (mCheckBox_1.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.que_2_option_1_str, Toast.LENGTH_SHORT).show();
-        }
-        if (mCheckBox_2.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.que_2_option_2_str, Toast.LENGTH_SHORT).show();
-        }
-        if (mCheckBox_3.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.que_2_option_3_str, Toast.LENGTH_SHORT).show();
-        }
-        if (mCheckBox_4.isChecked()) {
-            Toast.makeText(getApplicationContext(), R.string.que_2_option_4_str, Toast.LENGTH_SHORT).show();
-        }
-        if (mCheckBox_1.isChecked() && mCheckBox_2.isChecked() && mCheckBox_3.isChecked()) {
-            mark = mark + 1;
-        }
-    }
-
-    public void questionFour(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-        switch (view.getId()) {
-            case R.id.que_4_option_1:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_1, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_4_option_2:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_2, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_4_option_3:
-                if (checked) {
-                    mark = mark + 1;
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_3, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_4_option_4:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_4_opt_4, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                Toast.makeText(getApplicationContext(), R.string.default_str_toast, Toast.LENGTH_SHORT).show();
-
-        }
-
-
-    }
-
-    public void questionFive(View view) {
-        boolean checked = ((RadioButton) view).isChecked();
-
-        switch (view.getId()) {
-            case R.id.que_5_option_1:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_1, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_5_option_2:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_2, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_5_option_3:
-                if (checked) {
-                    mark = mark + 1;
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_3, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            case R.id.que_5_option_4:
-                if (checked) {
-                    Toast.makeText(getApplicationContext(), R.string.que_5_opt_4, Toast.LENGTH_SHORT).show();
-                }
-                break;
-            default:
-                Toast.makeText(getApplicationContext(), R.string.default_str_toast, Toast.LENGTH_SHORT).show();
-        }
-    }
 }
+
+
+
+
+
 
 
 

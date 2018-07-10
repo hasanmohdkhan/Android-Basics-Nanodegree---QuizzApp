@@ -22,25 +22,21 @@
             <RadioButton
                 android:id="@+id/option_1"
                 style="@style/CommonWidHeight"
-                android:onClick="questionOne"
                 android:text="@string/rb_option1_string" />
 
             <RadioButton
                 android:id="@+id/option_2"
                 style="@style/CommonWidHeight"
-                android:onClick="questionOne"
                 android:text="@string/rb_option2_string" />
 
             <RadioButton
                 android:id="@+id/option_3"
                 style="@style/CommonWidHeight"
-                android:onClick="questionOne"
                 android:text="@string/rb_option3_string" />
 
             <RadioButton
-                android:id="@+id/option_4"
+                android:id="@+id/que_1_option_4"
                 style="@style/CommonWidHeight"
-                android:onClick="questionOne"
                 android:text="@string/rb_option4_string" />
         </RadioGroup>
 
@@ -54,28 +50,24 @@
             android:id="@+id/checkbox_1"
             style="@style/CommonWidHeight"
             android:layout_below="@id/question_2"
-            android:onClick="questionTwo"
             android:text="@string/que_2_option_1_str" />
 
         <CheckBox
             android:id="@+id/checkbox_2"
             style="@style/CommonWidHeight"
             android:layout_below="@id/checkbox_1"
-            android:onClick="questionTwo"
             android:text="@string/que_2_option_2_str" />
 
         <CheckBox
             android:id="@+id/checkbox_3"
             style="@style/CommonWidHeight"
             android:layout_below="@id/checkbox_2"
-            android:onClick="questionTwo"
             android:text="@string/que_2_option_3_str" />
 
         <CheckBox
             android:id="@+id/checkbox_4"
             style="@style/CommonWidHeight"
             android:layout_below="@id/checkbox_3"
-            android:onClick="questionTwo"
             android:text="@string/que_2_option_4_str" />
 
         <TextView
@@ -84,13 +76,14 @@
             android:layout_below="@+id/checkbox_4"
             tools:text="Question Goes Here" />
 
-
         <EditText
             android:id="@+id/edit_text_view"
             style="@style/CommonWidHeight"
             android:layout_below="@id/question_3"
             android:layout_margin="@dimen/edit_box_margin_10dp"
             android:hint="@string/edit_text_hint"
+            android:imeOptions="actionDone"
+            android:inputType="text"
             android:textColorHint="@color/primary_light" />
 
         <TextView
@@ -98,7 +91,6 @@
             style="@style/TextViewStyle"
             android:layout_below="@+id/edit_text_view"
             tools:text="Question Goes Here" />
-
 
         <ImageView
             android:id="@+id/image_view"
@@ -115,25 +107,21 @@
             <RadioButton
                 android:id="@+id/que_4_option_1"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFour"
                 android:text="@string/rb_option1_ques4_string" />
 
             <RadioButton
                 android:id="@+id/que_4_option_2"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFour"
                 android:text="@string/rb_option2_ques4_string" />
 
             <RadioButton
                 android:id="@+id/que_4_option_3"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFour"
                 android:text="@string/rb_option3_ques4_string" />
 
             <RadioButton
                 android:id="@+id/que_4_option_4"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFour"
                 android:text="@string/rb_option4_ques4_string" />
         </RadioGroup>
 
@@ -151,25 +139,21 @@
             <RadioButton
                 android:id="@+id/que_5_option_1"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFive"
                 android:text="@string/rb_option1_ques5_string" />
 
             <RadioButton
                 android:id="@+id/que_5_option_2"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFive"
                 android:text="@string/rb_option2_ques5_string" />
 
             <RadioButton
                 android:id="@+id/que_5_option_3"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFive"
                 android:text="@string/rb_option3_ques5_string" />
 
             <RadioButton
                 android:id="@+id/que_5_option_4"
                 style="@style/CommonWidHeight"
-                android:onClick="questionFive"
                 android:text="@string/rb_option4_ques5_string" />
         </RadioGroup>
 
